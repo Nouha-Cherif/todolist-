@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do list</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="./todolist.css">
+
+    <div class="page">
+        <h1 id="title">To-Do list</h1>
+        <input placeholder="Add new task" id="in" type="text" />
+        <button id="button">Add to-do</button>
+     <ul></ul>
+    </div>
+    <script>
+        let button = document.querySelector("button");
+
+        let liste = document.querySelector("ul");
+
+        let input = document.querySelector("input");
+
+        input.addEventListener("keyup", (e) => {
+            if (e.keyCode === 13) {
+                addTodo();
+            }
+        })
+        button.addEventListener("click", addTodo);
+        function addTodo() {
+            if (input.value == "") {
+                alert("nothing to add !");
+            }
+            else {
+                liste.innerHTML += `<li> <input  type="checkbox"/>  ${input.value} <button > Delete</button> </li>`;
+                input.value = "";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
