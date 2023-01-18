@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculatrice</title>
+</head>
+
+<body>
+    <h1>-CALCULATOR-</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="calcul.html">Calculator</a></li>
+    </ul>
+    X<input type="text" name="" id="X" />
+    <br />
+    Y<input type="text" name="" id="Y" />
+    <button onclick="showaddition()">+</button>
+    <button onclick="showminus()">-</button>
+    <button onclick="showmultiplication()">*</button>
+    <button onclick="showdivision()">/</button>
+
+    <h3></h3>
+    <script>
+        let x = document.querySelector("#X");
+        let y = document.querySelector("#Y");
+        function showaddition() {
+            document.querySelector("h3").innerHTML = addition(
+                Number(x.value),
+                Number(y.value)
+            );
+        }
+        function showminus() {
+            document.querySelector("h3").innerHTML = minus(
+                Number(x.value),
+                Number(y.value)
+            );
+        }
+        function showmultiplication() {
+            document.querySelector("h3").innerHTML = multiplication(
+                Number(x.value),
+                Number(y.value)
+            );
+        }
+        function showdivision() {
+            if (Number(y.value) == 0) {
+                alert("try again !");
+            }
+            else {
+                document.querySelector("h3").innerHTML = division(
+                    Number(x.value),
+                    Number(y.value)
+                );
+            }
+        }
+        function addition(x, y) {
+            return + (x + y);
+        }
+        function minus(x, y) {
+            return + (x - y);
+        }
+        function multiplication(x, y) {
+            return + (x * y);
+        }
+        function division(x, y) {
+            return + (x / y);
+        }
+    </script>
+
+</body>
+
+</html>
